@@ -1,0 +1,47 @@
+body{
+    background-image: url(../img/book-background.jpg);
+    background-size: 1400px;
+}
+
+h1{
+    font-size: 100px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+    font-weight: bold;
+}
+
+.homePage{
+    font-size: 20px;
+}
+
+.marginHead {
+    margin: 30px;
+}
+
+.marginButtons {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.inputchange{
+    background-color: rgb(94, 92, 92);
+    color: white;
+    text-align: center;
+    width: 300px;
+}
+
+.textToLeft{
+    justify-content: flex-start;    
+}
+
+.marginLike{
+    margin: 5px;    
+}
+
+.like{
+    background-color: blue;    
+}
+
+.unlike{
+    background-color: red;    
+}

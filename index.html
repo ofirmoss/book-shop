@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book-shop</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <a class="btn btn-primary homePage" href="https://ofirmoss.github.io/portfolio/" role="button">
+        <i class="fa fa-home" aria-hidden="true"></i>        
+    </a>    
+</head>
+
+<body class="container" onload="renderBooks()">
+    <h1 class="text-center marginHead text-white">The Book Shop</h1>
+
+    <button type="button" class="btn btn-primary btn-sm float-right marginButtons" onclick="readAndAddNewBook()">Create</button>
+
+    <table class="table table-striped table-dark text-center">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Book name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer textToLeft">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/book-shop.js"></script>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.js"></script>
+
+</body>
+
+</html>
