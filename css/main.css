@@ -45,3 +45,11 @@ h1{
 .unlike{
     background-color: red;    
 }
+
+@media (max-width:600px) 
+{
+    .offcanvas-aside{
+        width:80vw;
+        left: 80vw;
+    }
+}

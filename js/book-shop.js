@@ -32,15 +32,17 @@ gBooks = [{
 ];
 
 
+
 function renderBooks() {
     var newBook = '';
+    var storageBooks = getStorage();
 
-    for (var i = 0; i < gBooks.length; i++) {
+    for (var i = 0; i < storageBooks.length; i++) {
         newBook += ` 
                   <tr id="book${i+1}">
                   <th scope="row">${i+1}</th>
-                  <td id="bookName${i+1}">${gBooks[i].name}</td>
-                  <td id="bookPrice${i+1}">${gBooks[i].price}</td>
+                  <td id="bookName${i+1}">${storageBooks[i].name}</td>
+                  <td id="bookPrice${i+1}">${storageBooks[i].price}</td>
                   <td id="CRUD">
                   <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" onclick="showDetails(${i+1})">Read</button> 
                   <button type="button" class="btn btn-outline-success" onclick="readAndUpdateBook(${i+1})">Update</button>
@@ -57,6 +59,10 @@ function renderBooks() {
 function deleteBook(elbook) {
     var deletedBook = elbook.id
     gBooks.splice(deletedBook, 1);
+   
+    // localstorge
+    updateStorage();
+
     renderBooks();
 }
 
@@ -77,6 +83,9 @@ function addBook() {
         likes: 0,
         unlikes: 0
     })
+
+    // localstorge
+    updateStorage();
 
     renderBooks();
 }
@@ -128,6 +137,9 @@ function updateBook(bookColNum) {
         price: price
     };
 
+        // localstorge
+        updateStorage();
+
     var bookId = '#book' + bookColNum;
     var updateBook = ` 
     <th scope="row">${bookColNum}</th>
@@ -161,8 +173,10 @@ function upDateLike(book) {
     ${gBooks[book].likes}  
     <button type="button" class="btn btn-primary btn-sm like marginLike" >like</button>
     <button type="button" class="btn btn-secondary btn-sm unlike marginLike" >unlike</button>  
-    ${gBooks[book].unlikes} 
+    ${gBooks[book].unlikes}   
     `
+        // localstorge
+        updateStorage();
 }
 
 function upDateUnlike(book) {
@@ -173,4 +187,14 @@ function upDateUnlike(book) {
     <button type="button" class="btn btn-secondary btn-sm unlike marginLike" >unlike</button>  
     ${gBooks[book].unlikes} 
     `
+        // localstorge
+        updateStorage();
+}
+
+function updateStorage() {
+    window.localStorage.setItem('gBooks', JSON.stringify(gBooks));
+}
+
+function getStorage() {
+    return JSON.parse(window.localStorage.getItem('gBooks'));
 }
