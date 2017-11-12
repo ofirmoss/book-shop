@@ -34,6 +34,7 @@ gBooks = [{
 
 
 function renderBooks() {
+    updateStorage();
     var newBook = '';
     var storageBooks = getStorage();
 
